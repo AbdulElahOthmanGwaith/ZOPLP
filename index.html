@@ -1,153 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZOPLP - تواصل بلا حدود</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Login Page -->
-    <div id="loginPage" class="page active">
-        <div class="login-container">
-            <div class="login-header">
-                <h1 class="logo">ZOPLP</h1>
-                <p class="tagline">تواصل بلا حدود، عبّر عن نفسك بالصوت</p>
-            </div>
-            
-            <div class="login-form">
-                <h2>مرحباً بعودتك إلى ZOPLP</h2>
-                <p class="form-subtitle">سجل دخولك للتواصل مع أصدقائك بلا حدود</p>
-                
-                <div class="input-group">
-                    <label>اسم المستخدم</label>
-                    <input type="text" id="username" placeholder="أدخل اسم المستخدم">
-                </div>
-                
-                <div class="input-group">
-                    <label>كلمة المرور</label>
-                    <input type="password" id="password" placeholder="أدخل كلمة المرور">
-                </div>
-                
-                <button class="btn-primary" onclick="login()">🚀 تسجيل الدخول</button>
-                <button class="btn-secondary" onclick="demoLogin()">⚡ دخول تجريبي سريع</button>
-            </div>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>أصدقاء بلا حدود</h3>
-                    <p>لا قيود على عدد الأصدقاء</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎤</div>
-                    <h3>تعليقات صوتية</h3>
-                    <p>عبّر عن نفسك بصوتك</p>
-                </div>
-            </div>
-            
-            <div class="footer">
-                © 2025 ZOPLP. جميع الحقوق محفوظة<br>
-                <span class="made-with">Made with ❤️ by Manus</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main App -->
-    <div id="mainApp" class="page">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="header-content">
-                <div class="header-left">
-                    <h1 class="app-logo">ZOPLP</h1>
-                    <div class="friends-counter">
-                        <span class="counter-icon">👥</span>
-                        <span class="counter-text">5,247 صديق</span>
-                    </div>
-                </div>
-                
-                <div class="header-right">
-                    <button class="header-btn">🔍</button>
-                    <button class="header-btn">🔔</button>
-                    <div class="user-avatar" id="userAvatar">م</div>
-                    <span class="user-name" id="userName">مستخدم تجريبي</span>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="content-wrapper">
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    <div class="sidebar-content">
-                        <div class="user-profile">
-                            <div class="profile-avatar" id="profileAvatar">م</div>
-                            <h3 id="profileName">مستخدم تجريبي</h3>
-                            <p id="profileUsername">@demo_user</p>
-                        </div>
-                        
-                        <nav class="sidebar-nav">
-                            <button class="nav-item active">
-                                <span class="nav-icon">🏠</span>
-                                <span class="nav-text">الصفحة الرئيسية</span>
-                            </button>
-                            <button class="nav-item">
-                                <span class="nav-icon">👤</span>
-                                <span class="nav-text">الملف الشخصي</span>
-                            </button>
-                            <button class="nav-item">
-                                <span class="nav-icon">👥</span>
-                                <span class="nav-text">الأصدقاء</span>
-                            </button>
-                            <button class="nav-item">
-                                <span class="nav-icon">⚙️</span>
-                                <span class="nav-text">الإعدادات</span>
-                            </button>
-                        </nav>
-                    </div>
-                </aside>
-
-                <!-- Feed -->
-                <div class="feed">
-                    <!-- Create Post -->
-                    <div class="create-post">
-                        <div class="create-post-header">
-                            <div class="post-avatar" id="createPostAvatar">م</div>
-                            <div class="post-user-info">
-                                <h4 id="createPostName">مستخدم تجريبي</h4>
-                                <p>ماذا تريد أن تشارك؟</p>
-                            </div>
-                        </div>
-                        
-                        <textarea id="newPostContent" placeholder="بماذا تفكر؟ شارك أفكارك مع أصدقائك..." rows="4"></textarea>
-                        
-                        <div class="create-post-actions">
-                            <div class="post-options">
-                                <button class="post-option">
-                                    <span class="option-icon">📷</span>
-                                    <span>صورة</span>
-                                </button>
-                                <button class="post-option">
-                                    <span class="option-icon">🎤</span>
-                                    <span>صوت</span>
-                                </button>
-                            </div>
-                            <button class="btn-post" onclick="createPost()">📤 نشر</button>
-                        </div>
-                    </div>
-
-                    <!-- Posts Feed -->
-                    <div id="postsContainer">
-                        <!-- Posts will be dynamically added here -->
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
