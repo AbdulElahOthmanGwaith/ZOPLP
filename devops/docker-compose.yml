@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  agentbench:
+    build: .
+    container_name: agentbench-dev
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python -m pytest -v
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  agentbench-gpu:
+    build: .
+    container_name: agentbench-gpu
+    volumes:
+      - .:/app
+    working_dir: /app
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - PYTHONUNBUFFERED=1
+    command: python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}')"
+
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    container_name: agentbench-jupyter
+    volumes:
+      - .:/home/jovyan/work
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    working_dir: /home/jovyan/work
